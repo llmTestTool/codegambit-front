@@ -1,68 +1,37 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import 'tailwindcss';
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  /* @ 컬러 시스템 정의 예시
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #10b981;
+   */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@layer base {
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
+/* @ 공통 컴포넌트 구현에 필요하면 사용할 코드
+@layer components {
   button {
-    background-color: #f9f9f9;
+    @apply text-title2 gap-5 rounded-full transition-colors duration-200 ease-in-out outline-none;
+    cursor: pointer;
+  }
+
+  button:active {
+    transform: scale(0.97);
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+  input {
+    @apply bg-surface focus:ring-background-hover text-title2 rounded-full px-4 py-2 transition-all duration-200 ease-in-out outline-none placeholder:text-gray-300 focus:ring-2;
+  }
+
+  select {
+    @apply text-title2 rounded-full bg-white px-4 py-2 transition-all duration-200 ease-in-out outline-none placeholder:text-gray-300;
+    cursor: pointer;
   }
 }
