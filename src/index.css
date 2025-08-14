@@ -1,11 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* @ 컬러 시스템 정의 예시
-  --color-primary: #3b82f6;
-  --color-primary-hover: #2563eb;
-  --color-secondary: #10b981;
-   */
+    --color-lightGray: '#F8FAFC'
 }
 
 @layer base {
