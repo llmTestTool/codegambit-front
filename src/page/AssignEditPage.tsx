@@ -9,40 +9,38 @@ const AssignEditPage = () => {
   const assign = fetchAssignById(1);
 
   return (
-    <div className="min-h-screen px-6">
-      <div className="mx-auto max-w-5xl">
-        <AssignHeader assign={assign} />
+    <div>
+      <AssignHeader assign={assign} />
 
-        <div className="space-y-8">
-          <AssignOverview assign={assign} title="Screen Flows & Logic" />
+      <div className="space-y-8">
+        <AssignOverview assign={assign} title="Screen Flows & Logic" />
 
-          <UserFlowBlock
+        <UserFlowBlock
+          title="User Authentication Flow"
+          stepsCount={assign.steps.length}
+        >
+          <div className="mt-4">
+            {assign.steps.map((step, idx) => (
+              <AssignStepCard key={step.id} step={step} index={idx + 1} />
+            ))}
+          </div>
+        </UserFlowBlock>
+
+        <div className="rounded-lg border bg-white p-4">
+          {/* 복사된 섹션 예시 2번째 블록 */}
+          <AssignOverview
+            assign={assign}
             title="User Authentication Flow"
             stepsCount={assign.steps.length}
-          >
-            <div className="mt-4">
-              {assign.steps.map((step, idx) => (
-                <AssignStepCard key={step.id} step={step} index={idx + 1} />
-              ))}
-            </div>
-          </UserFlowBlock>
-
-          <div className="rounded-lg border bg-white p-4">
-            {/* 복사된 섹션 예시 2번째 블록 */}
-            <AssignOverview
-              assign={assign}
-              title="User Authentication Flow"
-              stepsCount={assign.steps.length}
-            />
-            <div className="mt-4">
-              {assign.steps.map((step, idx) => (
-                <AssignStepCard
-                  key={`copy-${step.id}`}
-                  step={step}
-                  index={idx + 1}
-                />
-              ))}
-            </div>
+          />
+          <div className="mt-4">
+            {assign.steps.map((step, idx) => (
+              <AssignStepCard
+                key={`copy-${step.id}`}
+                step={step}
+                index={idx + 1}
+              />
+            ))}
           </div>
         </div>
       </div>
