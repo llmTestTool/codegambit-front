@@ -1,10 +1,19 @@
 import { useRoutes } from "react-router-dom";
+import MainLayout from '../layout/MainLayout';
+import DashBoardPage from '../page/DashBoardPage';
+import AssignListPage from '../page/AssignListPage';
+import AssignEditPage from '../page/AssignEditPage';
+
 
 const MainRoutes = () => {
   const routes = useRoutes([
     {
-      path: "/",
-      element: <div>Welcome to Code Gambit!</div>
+      path: "/", element: <MainLayout />,
+      children: [
+        { path: '/dashboard', element: <DashBoardPage />},
+        { path: '/assginlist', element: <AssignListPage />},
+        { path: '/assignedit', element: <AssignEditPage />},
+      ]
     },
   ]);
 
