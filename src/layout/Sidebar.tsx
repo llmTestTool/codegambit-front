@@ -1,6 +1,6 @@
 const Sidebar =() => {
   return(
-    <aside className="w-60 min-h-screen bg-gray-400">
+    <aside className="w-60 min-h-screen bg-lightGray">
 
     </aside>
   )
