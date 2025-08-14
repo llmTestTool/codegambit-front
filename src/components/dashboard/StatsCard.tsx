@@ -9,18 +9,26 @@ interface StatsCardProps {
 
 const StatsCard: React.FC<StatsCardProps> = ({ title, value, unit, icon }) => {
   return (
-    <div className="bg-white rounded-lg p-4 sm:p-6 shadow-sm border border-gray-200">
-      <div className="flex items-center">
-        <div className="flex-shrink-0">
-          <div className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center">
-            {icon}
-          </div>
+    <div className="rounded-lg border border-slate-200 bg-white p-4 sm:p-6">
+      <div className="flex flex-col gap-6">
+        <div className="min-w-0">
+          <dt className="truncate overflow-hidden text-lg font-semibold whitespace-nowrap text-neutral-900 sm:text-2xl">
+            {title}
+          </dt>
         </div>
-        <div className="ml-4 flex-1">
-          <dt className="text-sm font-medium text-gray-500 truncate">{title}</dt>
+        <div className="flex items-baseline justify-between">
+          <div className="flex-shrink-0">
+            <div className="flex items-center justify-center text-lg sm:text-2xl">
+              {icon}
+            </div>
+          </div>
           <dd className="flex items-baseline">
-            <div className="text-2xl font-semibold text-gray-900">{value}</div>
-            <div className="ml-1 text-sm text-gray-500">{unit}</div>
+            <div className="text-3xl font-semibold text-black sm:text-5xl">
+              {value}
+            </div>
+            <div className="ml-1 text-base text-neutral-900 sm:text-xl">
+              {unit}
+            </div>
           </dd>
         </div>
       </div>

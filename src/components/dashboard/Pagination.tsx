@@ -21,9 +21,9 @@ const Pagination: React.FC<PaginationProps> = ({
         key="prev"
         onClick={() => onPageChange(current - 1)}
         disabled={!pagination.hasPrevPage}
-        className={`flex items-center px-3 py-2 text-sm ${
+        className={`flex items-center px-3 py-2 text-sm font-medium ${
           pagination.hasPrevPage
-            ? 'text-gray-600 hover:text-gray-900'
+            ? 'text-neutral-900 hover:text-gray-900'
             : 'cursor-not-allowed text-gray-400'
         }`}
       >
@@ -38,10 +38,10 @@ const Pagination: React.FC<PaginationProps> = ({
         <button
           key={i}
           onClick={() => onPageChange(i)}
-          className={`mx-1 rounded px-3 py-2 text-sm ${
+          className={`mx-1 rounded-lg px-3 py-2 text-sm font-medium ${
             i === current
-              ? 'text-black shadow-md'
-              : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+              ? 'border border-neutral-200 text-black shadow-sm'
+              : 'text-neutral-900 hover:bg-gray-100 hover:text-gray-900'
           }`}
         >
           {i}
@@ -55,9 +55,9 @@ const Pagination: React.FC<PaginationProps> = ({
         key="next"
         onClick={() => onPageChange(current + 1)}
         disabled={!pagination.hasNextPage}
-        className={`flex items-center px-3 py-2 text-sm ${
+        className={`flex items-center px-3 py-2 text-sm font-medium ${
           pagination.hasNextPage
-            ? 'text-gray-600 hover:text-gray-900'
+            ? 'text-neutral-900 hover:text-gray-900'
             : 'cursor-not-allowed text-gray-400'
         }`}
       >
@@ -70,7 +70,7 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className="border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+    <div className="bg-white px-4 py-3 sm:px-6">
       <div className="flex items-center justify-center">
         {renderPaginationButtons()}
       </div>

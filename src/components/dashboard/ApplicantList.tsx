@@ -11,6 +11,7 @@ interface ApplicantListProps {
   searchTerm: string;
   onSearchChange: (value: string) => void;
   onPageChange: (page: number) => void;
+  onApplyFilters?: (filters: { status: string; score: string }) => void;
 }
 
 const ApplicantList: React.FC<ApplicantListProps> = ({
@@ -19,21 +20,23 @@ const ApplicantList: React.FC<ApplicantListProps> = ({
   searchTerm,
   onSearchChange,
   onPageChange,
+  onApplyFilters,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-      <div className="px-4 sm:px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-medium text-gray-900">전체 지원자 목록</h2>
+    <div>
+      <div className="mb-6">
+        <p className="text-lg font-semibold text-neutral-900 sm:text-2xl">
+          전체 지원자 목록
+        </p>
       </div>
-
       <SearchAndFilter
         searchTerm={searchTerm}
         onSearchChange={onSearchChange}
+        onApplyFilters={onApplyFilters}
       />
-
-      <ApplicantTable applicants={applicants} />
-      <ApplicantCardList applicants={applicants} />
-
+      <div className="mb-6 rounded-lg border border-slate-200 bg-white">
+        <ApplicantTable applicants={applicants} />
+      </div>
       <Pagination
         pagination={paginationData.pagination}
         onPageChange={onPageChange}

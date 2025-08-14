@@ -1,41 +1,45 @@
-import { CiSearch } from "react-icons/ci";
-import { LuContactRound } from "react-icons/lu";
-import { LuClipboardList } from "react-icons/lu";
+import { CiSearch } from 'react-icons/ci';
+import { LuContactRound } from 'react-icons/lu';
+import { LuClipboardList } from 'react-icons/lu';
 import { NavLink } from 'react-router-dom';
 
 const sideItems = [
-  {label: '전체 지원자', Img: LuContactRound, path: '/dashboard'},
-  {label: '요구사항 확인', Img: LuClipboardList, path: '/assignlist'},
-]
+  { label: '전체 지원자', Img: LuContactRound, path: '/dashboard' },
+  { label: '요구사항 확인', Img: LuClipboardList, path: '/assignlist' },
+];
 
-const Sidebar =() => {
-  return(
-    <aside className="w-60 min-h-screen bg-lightGray">
-      <div className="px-6 py-9 flex items-center justify-center space-x-4">
-        <h3 className="text-gray-900 text-2xl font-bold">CodeGambit</h3>
+const Sidebar = () => {
+  return (
+    <aside className="min-h-screen w-60 bg-slate-50">
+      <div className="flex items-center justify-center space-x-4 px-6 py-9">
+        <h3 className="text-2xl font-bold text-gray-900">CodeGambit</h3>
       </div>
 
-      <div className="px-6 flex items-center space-x-8">
-        <div className="flex items-center w-full h-8 bg-white border border-gray-300 rounded-lg">
-          <CiSearch className="ml-2 mr-2" />
-          <span className="text-gray-900 text-sm font-medium">검색</span>
+      <div className="flex items-center space-x-8 px-6">
+        <div className="flex h-8 w-full items-center rounded-lg border border-gray-300 bg-white">
+          <CiSearch className="mr-2 ml-2" />
+          <span className="text-sm font-medium text-gray-900">검색</span>
         </div>
       </div>
 
-      <nav className="px-6 py-8 flex flex-col space-y-2.5">
+      <nav className="flex flex-col space-y-2.5 px-6 py-8">
         {sideItems.map(({ label, Img, path }) => (
           <NavLink
             key={path}
             to={path}
             className={({ isActive }) =>
-              `flex items-center px-4 py-2 rounded-lg transition-colors ${
-                isActive ? 'bg-gray-900 text-white font-medium' : 'text-gray-900'
+              `flex items-center rounded-lg px-4 py-2 transition-colors ${
+                isActive
+                  ? 'bg-gray-900 font-medium text-white'
+                  : 'text-gray-900'
               }`
             }
           >
             {({ isActive }) => (
               <>
-                <Img className={`mr-2 text-lx ${isActive ? 'text-white' : 'text-gray-900'}`} />
+                <Img
+                  className={`text-lx mr-2 ${isActive ? 'text-white' : 'text-gray-900'}`}
+                />
                 <span>{label}</span>
               </>
             )}
@@ -43,7 +47,7 @@ const Sidebar =() => {
         ))}
       </nav>
     </aside>
-  )
-}
+  );
+};
 
 export default Sidebar;
