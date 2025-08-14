@@ -11,7 +11,7 @@ const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
   onSearchChange,
 }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-6">
       <div className="flex flex-col gap-4 sm:flex-row">
         <div className="flex-1">
           <div className="relative">
