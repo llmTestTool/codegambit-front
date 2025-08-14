@@ -23,7 +23,7 @@ const AssignHeader: React.FC<Props> = ({ assign }) => {
               <p className="mr-10 truncate text-lg font-semibold text-neutral-900 sm:text-2xl">
                 {assign.title}
               </p>
-              <button className="ml-2 text-sm text-gray-400 hover:text-gray-600">
+              <button className="ml-2 text-sm text-neutral-900 hover:text-gray-600">
                 <LuPencil className="h-4 w-4" />
               </button>
             </div>
