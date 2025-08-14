@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom';
 import StatusBox from './StatusBox';
 import { CiSearch } from 'react-icons/ci';
 import { FiFilter } from "react-icons/fi";
-import AssignCard from './AssignCard';
+import AssignCardGrid from './AssginCardGrid';
+import { mockCardsData} from '../../mock/mockCardsData';
 
 
 const AssignListPage = () => {
@@ -30,17 +31,8 @@ const AssignListPage = () => {
             <span className="text-gray-900 text-sm font-medium">필터</span>
           </div>
         </div>
-        <AssignCard
-          id={1}
-          status="done"
-          title="E-commerce Dashboard"
-          description="Build a responsive admin panel to manage store."
-          owner="김민수"
-          updatedAt="24.1.15 수정됨"
-          flows={2}
-          assets={1523}
-          versions={297}
-        />
+
+        <AssignCardGrid mockCardsData={mockCardsData} />
 
       </div>
     </div>
