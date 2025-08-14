@@ -6,5 +6,5 @@ import svgr from 'vite-plugin-svgr';
 // https://vite.dev/config/
 export default defineConfig(({ command }) => ({
   plugins: [react(), tsconfigPaths(), svgr()],
-  base: command === 'serve' ? '/' : '/codegambit-front/',
+  base: process.env.NODE_ENV === 'production' ? '/codegambit-front/' : '/',
 }));
