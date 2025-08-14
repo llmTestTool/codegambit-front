@@ -1,7 +1,157 @@
 @import 'tailwindcss';
 
-@theme {
-  --color-lightGray: #f8fafc;
+:root {
+  /* Headline */
+  --h1-size: 48px;
+  --h1-line: 48px;
+  --h2-size: 30px;
+  --h2-line: 36px;
+  --h3-size: 24px;
+  --h3-line: 32px;
+  --h4-size: 20px;
+  --h4-line: 28px;
+
+  /* Lead & Detail */
+  --lead-size: 20px;
+  --lead-line: 28px;
+  --detail-size: 12px;
+  --detail-line: 20px;
+
+  /* Title */
+  --title-large-size: 20px;
+  --title-large-line: 20px;
+  --title-medium-size: 18px;
+  --title-medium-line: 20px;
+  --subtitle-large-size: 16px;
+  --subtitle-large-line: 28px;
+  --subtitle-medium-size: 14px;
+  --subtitle-medium-line: 28px;
+  --subtitle-small-size: 12px;
+  --subtitle-small-line: 120px;
+
+  /* Body */
+  --body-large-size: 16px;
+  --body-large-line: 24px;
+  --body-medium-size: 14px;
+  --body-medium-line: 24px;
+  --body-small-size: 12px;
+  --body-small-line: 24px;
+
+  /* List */
+  --list-size: 16px;
+  --list-line: 24px;
+
+  /* Blockquote */
+  --blockquote-size: 16px;
+  --blockquote-line: 24px;
+
+  /* Inline code */
+  --inline-code-size: 14px;
+  --inline-code-line: 20px;
+
+  /* Table */
+  --table-head-size: 16px;
+  --table-head-line: 24px;
+  --table-item-size: 16px;
+  --table-item-line: 24px;
+}
+
+/* Headline 태그 기본 스타일 */
+h1 {
+  font-size: var(--h1-size);
+  line-height: var(--h1-line);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  line-height: var(--h2-line);
+}
+
+h3 {
+  font-size: var(--h3-size);
+  line-height: var(--h3-line);
+}
+
+h4 {
+  font-size: var(--h4-size);
+  line-height: var(--h4-line);
+}
+
+/* Lead & Detail */
+.lead {
+  font-size: var(--lead-size);
+  line-height: var(--lead-line);
+}
+
+.detail {
+  font-size: var(--detail-size);
+  line-height: var(--detail-line);
+}
+
+/* 기타 텍스트 스타일 */
+.title-large {
+  font-size: var(--title-large-size);
+  line-height: var(--title-large-line);
+}
+
+.title-medium {
+  font-size: var(--title-medium-size);
+  line-height: var(--title-medium-line);
+}
+
+.subtitle-large {
+  font-size: var(--subtitle-large-size);
+  line-height: var(--subtitle-large-line);
+}
+
+.subtitle-medium {
+  font-size: var(--subtitle-medium-size);
+  line-height: var(--subtitle-medium-line);
+}
+
+.subtitle-small {
+  font-size: var(--subtitle-small-size);
+  line-height: var(--subtitle-small-line);
+}
+
+.body-large {
+  font-size: var(--body-large-size);
+  line-height: var(--body-large-line);
+}
+
+.body-medium {
+  font-size: var(--body-medium-size);
+  line-height: var(--body-medium-line);
+}
+
+.body-small {
+  font-size: var(--body-small-size);
+  line-height: var(--body-small-line);
+}
+
+.list {
+  font-size: var(--list-size);
+  line-height: var(--list-line);
+}
+
+blockquote {
+  font-size: var(--blockquote-size);
+  line-height: var(--blockquote-line);
+}
+
+code {
+  font-size: var(--inline-code-size);
+  line-height: var(--inline-code-line);
+}
+
+.table-head {
+  font-size: var(--table-head-size);
+  line-height: var(--table-head-line);
+}
+
+.table-item {
+  font-size: var(--table-item-size);
+  line-height: var(--table-item-line);
 }
 
 @layer base {
