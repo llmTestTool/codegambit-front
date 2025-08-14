@@ -11,7 +11,7 @@ const MainRoutes = () => {
       path: "/", element: <MainLayout />,
       children: [
         { path: '/dashboard', element: <DashBoardPage />},
-        { path: '/assginlist', element: <AssignListPage />},
+        { path: '/assignlist', element: <AssignListPage />},
         { path: '/assignedit', element: <AssignEditPage />},
       ]
     },
