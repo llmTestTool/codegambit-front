@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import MainRoutes from '@routes/MainRoutes'
+import MainRoutes from '@route/MainRoutes'
 
 const App = () => {return <MainRoutes />}
 
