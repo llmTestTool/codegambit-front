@@ -18,6 +18,7 @@ const AssignEditPage = () => {
         <UserFlowBlock
           title="User Authentication Flow"
           stepsCount={assign.steps.length}
+          assign={''}
         >
           <div className="mt-4">
             {assign.steps.map((step, idx) => (
