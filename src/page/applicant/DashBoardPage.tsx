@@ -26,7 +26,7 @@ const DashBoardPage = () => {
 
   return (
     <div>
-      <div className="mb-8">
+      <div className="mb-6">
         <p className="text-neural-900 text-xl font-semibold sm:text-2xl">
           지원자 수행 현황
         </p>

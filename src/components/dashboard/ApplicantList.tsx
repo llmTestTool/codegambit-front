@@ -21,23 +21,25 @@ const ApplicantList: React.FC<ApplicantListProps> = ({
   onPageChange,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-sm border border-gray-200">
-      <div className="px-4 sm:px-6 py-4 border-b border-gray-200">
-        <h2 className="text-lg font-medium text-gray-900">전체 지원자 목록</h2>
+    <div>
+      <div className="mb-6">
+        <p className="text-lg font-semibold text-neutral-900 sm:text-2xl">
+          전체 지원자 목록
+        </p>
       </div>
-
       <SearchAndFilter
         searchTerm={searchTerm}
         onSearchChange={onSearchChange}
       />
+      <div className="rounded-lg border border-slate-200 bg-white">
+        <ApplicantTable applicants={applicants} />
+        <ApplicantCardList applicants={applicants} />
 
-      <ApplicantTable applicants={applicants} />
-      <ApplicantCardList applicants={applicants} />
-
-      <Pagination
-        pagination={paginationData.pagination}
-        onPageChange={onPageChange}
-      />
+        <Pagination
+          pagination={paginationData.pagination}
+          onPageChange={onPageChange}
+        />
+      </div>
     </div>
   );
 };
