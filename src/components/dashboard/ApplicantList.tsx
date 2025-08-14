@@ -36,7 +36,6 @@ const ApplicantList: React.FC<ApplicantListProps> = ({
       />
       <div className="rounded-lg border border-slate-200 bg-white">
         <ApplicantTable applicants={applicants} />
-        <ApplicantCardList applicants={applicants} />
       </div>
       <Pagination
         pagination={paginationData.pagination}

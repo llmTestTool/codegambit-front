@@ -10,65 +10,71 @@ const ApplicantTable: React.FC<ApplicantTableProps> = ({ applicants }) => {
   const getStatusBadge = (status: ApplicantStatus) => {
     switch (status) {
       case ApplicantStatus.COMPLETED:
-        return 'bg-green-100 text-green-800 border-green-200';
+        return 'bg-green-200 text-green-800';
       case ApplicantStatus.IN_PROGRESS:
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-sky-200 text-sky-700 ';
       case ApplicantStatus.PENDING:
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+        return 'bg-amber-200 text-amber-700';
       default:
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-gray-100 text-gray-800';
     }
   };
 
   const getScoreColor = (score: number) => {
     if (score >= 90) return 'text-green-600';
-    if (score >= 80) return 'text-blue-600';
-    if (score >= 70) return 'text-orange-600';
+    if (score >= 70) return 'text-sky-500';
+    if (score >= 50) return 'text-amber-400';
     return 'text-red-600';
   };
 
   return (
-    <div className="hidden lg:block overflow-hidden">
-      <table className="min-w-full divide-y divide-gray-200">
+    <div className="hidden overflow-hidden rounded-lg lg:block">
+      <table className="min-w-full divide-y divide-neutral-200">
         <thead className="bg-gray-50">
           <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th className="px-6 py-3 text-left text-base font-medium tracking-wider text-neutral-900 uppercase">
               지원자
             </th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th className="px-6 py-3 text-left text-base font-medium tracking-wider text-neutral-900 uppercase">
               과제
             </th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th className="px-6 py-3 text-left text-base font-medium tracking-wider text-neutral-900 uppercase">
               상태
             </th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th className="px-6 py-3 text-left text-base font-medium tracking-wider text-neutral-900 uppercase">
               점수
             </th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <th className="px-6 py-3 text-left text-base font-medium tracking-wider text-neutral-900 uppercase">
               보기
             </th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="divide-y divide-neutral-200 bg-white">
           {applicants.map((applicant) => (
             <tr key={applicant.id} className="hover:bg-gray-50">
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm font-medium text-gray-900">{applicant.name}</div>
+                <div className="text-sm font-medium text-zinc-950">
+                  {applicant.name}
+                </div>
               </td>
               <td className="px-6 py-4">
-                <div className="text-sm text-gray-900 max-w-xs truncate">{applicant.assignmentTitle}</div>
+                <div className="max-w-xs truncate text-base text-zinc-950">
+                  {applicant.assignmentTitle}
+                </div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-md border ${getStatusBadge(applicant.status)}`}>
+                <span
+                  className={`inline-flex rounded-md px-2 py-1 text-xs font-medium ${getStatusBadge(applicant.status)}`}
+                >
                   {applicant.status}
                 </span>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className={`text-sm font-medium ${getScoreColor(applicant.score)}`}>
+                <div className={`text-base ${getScoreColor(applicant.score)}`}>
                   {applicant.score}%
                 </div>
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              <td className="px-6 py-4 text-base whitespace-nowrap text-neutral-900">
                 {applicant.details}
               </td>
             </tr>
