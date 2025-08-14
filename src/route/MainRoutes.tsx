@@ -2,7 +2,7 @@ import { useRoutes } from "react-router-dom";
 
 import MainLayout from '../layout/MainLayout';
 import DashBoardPage from "@page/applicant/DashBoardPage";
-import AssignListPage from '../page/AssignListPage';
+import AssignListPage from '../page/AssignList/AssignListPage';
 import AssignEditPage from '../page/AssignEditPage';
 
 
