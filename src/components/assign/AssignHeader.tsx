@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Assign } from 'type/assign';
 
 import { LuArrowLeft, LuPencil, LuDownload, LuGlobe } from 'react-icons/lu';
@@ -8,12 +9,17 @@ interface Props {
 }
 
 const AssignHeader: React.FC<Props> = ({ assign }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="mb-6 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
       <div className="min-w-0 flex-1">
-        <div className="mb-6 flex items-center text-sm font-medium text-neutral-900">
+        <button
+          onClick={() => navigate('/')}
+          className="mb-6 flex items-center text-sm font-medium text-neutral-900 hover:text-neutral-500"
+        >
           <LuArrowLeft className="mr-1 inline" /> 과제 목록
-        </div>
+        </button>
         <div className="flex items-center justify-between">
           <div className="flex flex-col items-start gap-1">
             <span className="inline-flex items-center rounded-md border-none bg-amber-200 px-2 py-1 text-xs font-medium text-amber-700">
