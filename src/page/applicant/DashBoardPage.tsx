@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { summaryStats, fetchPaginatedApplicants } from 'mock/stats';
 import { DashboardStats, ApplicantList } from '../../components/dashboard';
 
-const ApplicantDashboard = () => {
+const DashBoardPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
   const pageSize = 8;
@@ -45,4 +45,4 @@ const ApplicantDashboard = () => {
   );
 };
 
-export default ApplicantDashboard;
+export default DashBoardPage;
