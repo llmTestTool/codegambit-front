@@ -34,7 +34,7 @@ const ApplicantList: React.FC<ApplicantListProps> = ({
         onSearchChange={onSearchChange}
         onApplyFilters={onApplyFilters}
       />
-      <div className="rounded-lg border border-slate-200 bg-white">
+      <div className="mb-6 rounded-lg border border-slate-200 bg-white">
         <ApplicantTable applicants={applicants} />
       </div>
       <Pagination
