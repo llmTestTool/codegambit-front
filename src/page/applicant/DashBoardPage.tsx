@@ -3,11 +3,12 @@ import { summaryStats, fetchPaginatedApplicants } from 'mock/stats';
 import { DashboardStats, ApplicantList } from '../../components/dashboard';
 
 const DashBoardPage = () => {
+  const PAGE_SIZE = 8;
+
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const pageSize = 8;
 
-  const paginatedData = fetchPaginatedApplicants(currentPage, pageSize);
+  const paginatedData = fetchPaginatedApplicants(currentPage, PAGE_SIZE);
 
   const filteredApplicants = paginatedData.data.filter(
     (applicant) =>
@@ -26,9 +27,9 @@ const DashBoardPage = () => {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <p className="text-neural-900 text-xl font-semibold sm:text-2xl">
           지원자 수행 현황
-        </h1>
+        </p>
       </div>
 
       <DashboardStats stats={summaryStats} />
