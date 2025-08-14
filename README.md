@@ -1,5 +1,5 @@
 # 미리보기
-https://codegambit.redzzzi.com/assignlist
+https://codegambit.redzzzi.com/
 
 # React + TypeScript + Vite
 
