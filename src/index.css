@@ -1,19 +1,25 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-lightGray: #F8FAFC
+  --color-lightGray: #f8fafc;
 }
 
 @layer base {
-    html {
-        font-family: 'Pretendard', sans-serif;
-    }
-    
-    body {
-        font-family: inherit;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  html {
+    font-family: 'Pretendard', sans-serif;
+  }
+
+  body {
+    font-family: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  button {
+    cursor: pointer;
+  }
 }
 
 /* @ 공통 컴포넌트 구현에 필요하면 사용할 코드
