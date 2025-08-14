@@ -4,7 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   plugins: [react(), tsconfigPaths(), svgr()],
-  base: '/codegambit-front/',
-});
+  base: command === 'serve' ? '/' : '/codegambit-front/',
+}));
