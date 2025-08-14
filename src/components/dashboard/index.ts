@@ -5,4 +5,3 @@ export { default as ApplicantCardList } from './ApplicantCardList';
 export { default as Pagination } from './Pagination';
 export { default as DashboardStats } from './DashboardStats';
 export { default as ApplicantList } from './ApplicantList';
-export * from './Icons';
