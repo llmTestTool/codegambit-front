@@ -11,6 +11,7 @@ interface ApplicantListProps {
   searchTerm: string;
   onSearchChange: (value: string) => void;
   onPageChange: (page: number) => void;
+  onApplyFilters?: (filters: { status: string; score: string }) => void;
 }
 
 const ApplicantList: React.FC<ApplicantListProps> = ({
@@ -19,6 +20,7 @@ const ApplicantList: React.FC<ApplicantListProps> = ({
   searchTerm,
   onSearchChange,
   onPageChange,
+  onApplyFilters,
 }) => {
   return (
     <div>
@@ -30,16 +32,16 @@ const ApplicantList: React.FC<ApplicantListProps> = ({
       <SearchAndFilter
         searchTerm={searchTerm}
         onSearchChange={onSearchChange}
+        onApplyFilters={onApplyFilters}
       />
       <div className="rounded-lg border border-slate-200 bg-white">
         <ApplicantTable applicants={applicants} />
         <ApplicantCardList applicants={applicants} />
-
-        <Pagination
-          pagination={paginationData.pagination}
-          onPageChange={onPageChange}
-        />
       </div>
+      <Pagination
+        pagination={paginationData.pagination}
+        onPageChange={onPageChange}
+      />
     </div>
   );
 };
