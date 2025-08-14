@@ -20,30 +20,12 @@ const AssignEditPage = () => {
           stepsCount={assign.steps.length}
           assign={''}
         >
-          <div className="mt-4">
+          <div className="mt-6">
             {assign.steps.map((step, idx) => (
               <AssignStepCard key={step.id} step={step} index={idx + 1} />
             ))}
           </div>
         </UserFlowBlock>
-
-        <div className="rounded-lg border bg-white p-4">
-          {/* 복사된 섹션 예시 2번째 블록 */}
-          <AssignOverview
-            assign={assign}
-            title="User Authentication Flow"
-            stepsCount={assign.steps.length}
-          />
-          <div className="mt-4">
-            {assign.steps.map((step, idx) => (
-              <AssignStepCard
-                key={`copy-${step.id}`}
-                step={step}
-                index={idx + 1}
-              />
-            ))}
-          </div>
-        </div>
       </div>
     </div>
   );

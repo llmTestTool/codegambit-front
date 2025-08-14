@@ -9,63 +9,44 @@ interface Props {
 
 const AssignStepCard: React.FC<Props> = ({ step, index }) => {
   return (
-    <div className="mb-6">
-      <div className="rounded-lg border bg-white p-4">
-        <div className="flex items-start gap-4">
-          {/* numbered badge inside the border */}
-          <div className="flex-shrink-0">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-black font-bold text-white">
-              {index}
-            </div>
+    <div className="mb-6 min-w-0">
+      <div className="flex items-start gap-4">
+        <div className="flex-shrink-0">
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-2xl font-semibold text-white">
+            {index}
           </div>
+        </div>
 
-          <div className="flex-1">
-            <div className="flex items-start justify-between">
-              <div className="min-w-0">
-                <h3 className="truncate text-sm font-semibold text-gray-900">
-                  {step.title}
-                </h3>
-                <p className="mt-1 truncate text-xs text-gray-500">
-                  {step.description}
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="min-h-[140px] rounded-md border bg-gray-50 p-3 text-sm text-gray-600">
+        <div className="flex flex-1 flex-col gap-2 rounded-lg border border-slate-300 p-4 px-5 sm:flex-row sm:items-start">
+          <div className="flex min-w-0 flex-1 flex-col">
+            <div className="min-w-0">
+              <p className="truncate text-lg font-bold text-zinc-950 sm:text-xl">
+                {step.title}
+              </p>
+              <p className="mt-1 h-48 max-h-48 truncate text-sm text-slate-500">
                 {step.description}
-              </div>
-              <div className="flex min-h-[140px] items-center justify-center rounded-md border bg-gray-50">
-                {step.screenshot ? (
-                  <img
-                    src={step.screenshot}
-                    alt={step.title}
-                    className="max-h-36 object-contain"
-                  />
-                ) : (
-                  <div className="text-xs text-gray-400">No Screenshot</div>
-                )}
-              </div>
+              </p>
             </div>
-
             <div className="mt-3 flex items-center gap-3">
               <button
                 aria-label="edit step"
-                className="rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+                className="rounded p-1 text-neutral-900 hover:bg-slate-50 hover:text-gray-600"
               >
                 <LuPencil className="h-4 w-4" />
               </button>
               <button
                 aria-label="delete step"
-                className="rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+                className="rounded p-1 text-neutral-900 hover:bg-slate-50 hover:text-gray-600"
               >
                 <LuTrash className="h-4 w-4" />
               </button>
             </div>
           </div>
-
-          <div className="ml-4 hidden text-xs text-gray-500 md:flex md:flex-col md:items-end md:justify-start">
-            <div>Screenshot</div>
+          <div className="flex w-full flex-col sm:w-48 sm:flex-none">
+            <div className="mb-2 text-sm text-slate-500">Screenshot</div>
+            <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+              <div className="absolute inset-0 rounded bg-neutral-50" />
+            </div>
           </div>
         </div>
       </div>
