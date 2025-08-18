@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { LuPencil, LuTrash } from 'react-icons/lu';
 import { AssignStep } from 'type/assign';
 import ImageModal from '../ui/ImageModal';
 
@@ -8,7 +7,7 @@ interface Props {
   index: number;
 }
 
-const AssignStepCard: React.FC<Props> = ({ step, index }) => {
+const AssignStepCardReadonly: React.FC<Props> = ({ step, index }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -29,20 +28,6 @@ const AssignStepCard: React.FC<Props> = ({ step, index }) => {
               <div className="mt-1 h-48 max-h-48 overflow-y-auto text-sm text-slate-500 whitespace-pre-line border border-gray-200 rounded p-2 bg-gray-50">
                 {step.description}
               </div>
-            </div>
-            <div className="mt-3 flex items-center gap-3">
-              <button
-                aria-label="edit step"
-                className="rounded p-1 text-neutral-900 hover:bg-slate-50 hover:text-gray-600"
-              >
-                <LuPencil className="h-4 w-4" />
-              </button>
-              <button
-                aria-label="delete step"
-                className="rounded p-1 text-neutral-900 hover:bg-slate-50 hover:text-gray-600"
-              >
-                <LuTrash className="h-4 w-4" />
-              </button>
             </div>
           </div>
           <div className="flex w-full flex-col sm:w-48 sm:flex-none">
@@ -79,4 +64,4 @@ const AssignStepCard: React.FC<Props> = ({ step, index }) => {
   );
 };
 
-export default AssignStepCard;
+export default AssignStepCardReadonly;

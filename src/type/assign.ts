@@ -11,5 +11,11 @@ export interface Assign {
   status: 'draft' | 'published' | 'archived';
   tags?: string[];
   overview?: string;
+  userFlows: UserFlow[];
+}
+
+export interface UserFlow {
+  id: number;
+  title: string;
   steps: AssignStep[];
 }
