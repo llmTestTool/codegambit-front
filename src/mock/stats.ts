@@ -1,4 +1,4 @@
-import { SummaryStats, Applicant, PaginatedResponse } from "type/stats";
+import { Applicant, PaginatedResponse, SummaryStats } from "type/stats";
 import { ApplicantStatus } from "type/Status";
 
 export const summaryStats: SummaryStats = {
@@ -9,9 +9,9 @@ export const summaryStats: SummaryStats = {
 };
 
 export const allApplicants: Applicant[] = [
-  { id: 1, name: '김도윤', assignmentTitle: 'AI-Powered Code Review...', status: ApplicantStatus.COMPLETED, score: 88, details: 'Basic Table Cell' },
-  { id: 2, name: '차은우', assignmentTitle: 'Smart Document Summari...', status: ApplicantStatus.COMPLETED, score: 82, details: 'Basic Table Cell' },
-  { id: 3, name: '최이서', assignmentTitle: 'AI-Powered Code Review...', status: ApplicantStatus.COMPLETED, score: 93, details: 'Basic Table Cell' },
+  { id: 1, name: '김도윤', assignmentTitle: 'AI-Powered Code Review...', status: ApplicantStatus.ANALYSIS_COMPLETED, score: 88, details: 'Basic Table Cell' },
+  { id: 2, name: '차은우', assignmentTitle: 'Smart Document Summari...', status: ApplicantStatus.ANALYSIS_COMPLETED, score: 82, details: 'Basic Table Cell' },
+  { id: 3, name: '최이서', assignmentTitle: 'AI-Powered Code Review...', status: ApplicantStatus.ANALYSIS_COMPLETED, score: 93, details: 'Basic Table Cell' },
   { id: 4, name: '이지유', assignmentTitle: 'AI-Powered Code Review...', status: ApplicantStatus.COMPLETED, score: 64, details: 'Basic Table Cell' },
   { id: 5, name: '김하린', assignmentTitle: 'Intelligent Chatbot Assistant', status: ApplicantStatus.PENDING, score: 56, details: 'Basic Table Cell' },
   { id: 6, name: '김선우', assignmentTitle: 'Intelligent Chatbot Assistant', status: ApplicantStatus.COMPLETED, score: 97, details: 'Basic Table Cell' },
